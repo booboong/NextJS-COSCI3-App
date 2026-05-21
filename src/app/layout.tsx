@@ -13,8 +13,8 @@ export const promptFont = Prompt({
 })
 
 export const metadata: Metadata = {
-  title: "ระบบรักเมนวันละ 3 มื้อ",
-  description: "รักเมน",
+  title: "MeLoveMyMain",
+  description: "เว็บไซต์สำหรับคนรักเมนทุกวัน 25/7 hrs.",
 };
 
 export default function RootLayout({
@@ -29,7 +29,7 @@ export default function RootLayout({
     >
       <body>
         <Navbar/>
-        <h1>ระบบรักเมนวันละ 3 มื้อ</h1>
+        {/* <h1>ระบบรักเมนวันละ 3 มื้อ</h1> */}
         <p/>
         {children}
         </body>

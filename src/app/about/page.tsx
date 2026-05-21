@@ -4,8 +4,8 @@ import Link from "next/link";
 export default function AboutPage() {
   return (
     <div>
-      About Page
-      {/* <p/>
+      {/* About Page
+      <p/>
     <Link href = "/" className="text-blue-500 underline">
     Home
     </Link> */}

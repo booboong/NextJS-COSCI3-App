@@ -1,10 +1,12 @@
+import Hero from "@/components/hero";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <div>
-    วันนี้คุณรักเมนครบ 5 หมู่หรือยัง ?
-    {/* <p/>
+    <Hero/>
+    {/* วันนี้คุณรักเมนครบ 5 หมู่หรือยัง ?
+    <p/>
     <Link href = "/characters" className="text-blue-500 underline">
     Characters
     </Link>
