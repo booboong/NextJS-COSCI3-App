@@ -8,10 +8,15 @@ export default async function CharactersPage() {
 
   return (
     <div>
+      {/* {
+        JSON.stringify(courseResponse.data)
+      } */}
+
       {
-        JSON.stringify(courseResponse)
+        courseResponse.data.length > 0 && <FeaturesCharacters courses={courseResponse.data}/>
       }
-      <FeaturesCharacters/>
+
+
       {/* Characters Page
       <p/>
     <Link href = "/" className="text-blue-500 underline">
