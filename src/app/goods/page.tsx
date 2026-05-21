@@ -6,7 +6,6 @@ import FeaturesGoods from "@/components/features-goods";
 export default function GoodsPage() {
   return (
     <div>
-      <AppLoading/>
       <FeaturesGoods/>
       Goods Page
       {/* <p/>
