@@ -1,72 +1,42 @@
-import {
-  Cable,
-  Code,
-  Contrast,
-  MonitorSmartphone,
-  SquareDashedMousePointer,
-  Zap,
-} from "lucide-react";
+import Image from "next/image";
 
-const features = [
-  {
-    title: "Blazing Fast Performance",
-    description:
-      "Optimized for speed with minimal loading times and instant interactions, ensuring a smooth experience across devices.",
-    icon: Zap,
-  },
-  {
-    title: "Fully Customizable",
-    description:
-      "Tailor every component to match your brand or workflow — with built-in support for themes, layouts, and configurations.",
-    icon: SquareDashedMousePointer,
-  },
-  {
-    title: "Developer-Friendly",
-    description:
-      "Built with clean, modern code and best practices in mind, making it easy to integrate, extend, and scale.",
-    icon: Code,
-  },
-  {
-    title: "Responsive by Default",
-    description:
-      "Every component is designed to look great on all screen sizes — no extra work needed to make things mobile-friendly.",
-    icon: MonitorSmartphone,
-  },
-  {
-    title: "Accessible for Everyone",
-    description:
-      "Built with accessibility best practices in mind to ensure an inclusive experience for all users, regardless of ability.",
-    icon: Contrast,
-  },
-  {
-    title: "Seamless Integration",
-    description:
-      "Easily connect with your favorite tools, APIs, and services — whether it's authentication, databases, or third-party libraries.",
-    icon: Cable,
-  },
-];
+type Props  = {
+  products : any[];
+}
 
-const FeaturesGoods = () => {
+const FeaturesGoods = ({ products }: Props) => {
   return (
     <div className="mx-auto flex max-w-7xl flex-col px-6 py-20">
       <h2 className="text-pretty text-center font-medium text-4xl tracking-[-0.04em] sm:text-[2.75rem]">
-        Everything in one place
+        Goods
       </h2>
       <p className="mt-3.5 text-pretty text-center text-muted-foreground text-xl tracking-[0.01em] sm:text-2xl">
-        Designed for speed, flexibility, and ease of use
+        ถูกใจ ไม่มีคำว่าแพง ( มีแต่ไม่มีตังค์ )
       </p>
 
       <div className="mt-16 grid grid-cols-1 gap-6 sm:mt-20 sm:grid-cols-2 lg:grid-cols-3">
-        {features.map((feature, index) => (
-          <div className="rounded-xl border bg-card px-6 py-7" key={index}>
+        {products.map((product) => (
+          <div className="rounded-xl border bg-card px-6 py-7" key={product.id}>
+            <div className="relative mb-5 aspect-4/5 w-full overflow-hidden rounded-xl sm:mb-6">
+              <Image
+                alt={product.name}
+                className="size-full bg-muted object-cover"
+                width={0}
+                height={0}  
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                src={`/product-image/${product.picture}`}
+                loading="eager"
+              />
+            </div>
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/5 text-primary dark:bg-primary/15">
-              <feature.icon />
+              ID : {product.id}
             </div>
             <h3 className="mt-5 font-medium text-lg tracking-[-0.005em]">
-              {feature.title}
+              Name : {product.name}
             </h3>
             <p className="mt-2 text-base text-foreground/70">
-              {feature.description}
+              {/* ใช้อันนี้จะไม่มีลูกน้ำ Price : {product.price.toString()} ฿ */}
+              Price : {Number(product.price).toLocaleString('th-TH')} ฿
             </p>
           </div>
         ))}

@@ -22,9 +22,7 @@ export default function Hero() {
             <br /> ครบ 5 หมู่หรือยัง ?
           </h1>
           <p className="mt-4 max-w-[60ch] text-foreground/60 text-lg sm:mt-6 sm:text-xl/normal">
-            Explore a collection of Shadcn UI blocks and components, ready to
-            preview and copy. Streamline your development workflow with
-            easy-to-implement examples.
+            เมนรักช่วงนี้คือจิฮิโระ โรคุฮิระ รักมาก ฮือ ๆ แอแง
           </p>
           <div className="mt-8 flex items-center gap-4 sm:mt-12">
             <Button className="rounded-full" size="lg">
