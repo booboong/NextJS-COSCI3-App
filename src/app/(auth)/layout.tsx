@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Prompt, Figtree } from "next/font/google";
-import { Suspense } from "react";
 import { cn } from "@/lib/utils";
-import Navbar from "@/components/navbar";
 import "../globals.css";
 
 const figtree = Figtree({subsets:['latin'],variable:'--font-sans'});
@@ -14,11 +12,11 @@ export const promptFont = Prompt({
 })
 
 export const metadata: Metadata = {
-  title: "MeLoveMyMain",
-  description: "เว็บไซต์สำหรับคนรักเมนทุกวัน 25/7 hrs.",
+  title: "MLMM - Login",
+  description: "หน้าต่างเข้าสู่ระบบของ MeLoveMyMain",
 };
 
-export default function RootLayout({
+export default function AuthLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -29,11 +27,6 @@ export default function RootLayout({
       className={cn(promptFont.className, "font-sans", figtree.variable)}
     >
       <body>
-        <Suspense fallback={<div className="h-16 border-b bg-background" />}>
-          <Navbar />
-        </Suspense>
-        {/* <h1>ระบบรักเมนวันละ 3 มื้อ</h1> */}
-        <p/>
         {children}
         </body>
     </html>

@@ -1,3 +1,4 @@
+import CartButton from "@/app/(front)/components/CartButton";
 import Image from "next/image";
 
 type Props  = {
@@ -38,6 +39,9 @@ const FeaturesGoods = ({ products }: Props) => {
               {/* ใช้อันนี้จะไม่มีลูกน้ำ Price : {product.price.toString()} ฿ */}
               Price : {Number(product.price).toLocaleString('th-TH')} ฿
             </p>
+            <div className = "mt-2">
+                <CartButton product={product} />
+            </div>
           </div>
         ))}
       </div>

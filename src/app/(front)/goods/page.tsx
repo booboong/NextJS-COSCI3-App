@@ -8,12 +8,19 @@ import {connection} from "next/server";
 export default async function GoodsPage() {
   await connection(); // signals this is a dynamic route
   const goods = await prisma.product.findMany();
+
+  // แปลง Decimal -> Number ก่อนส่งให้ Client Component
+  const serializedGoods = goods.map((p) => ({
+    ...p,
+    price: Number(p.price),  // Decimal -> Number
+  }))
+
   return (
     <div>
       {/* {goods.length > 0 && JSON.stringify(goods)} */}
 
       {
-        goods.length > 0 && <FeaturesGoods products={goods}/>
+        goods.length > 0 && <FeaturesGoods products={serializedGoods}/>
       }
 
       {/* Goods Page */}
